@@ -1,0 +1,72 @@
+<html>
+<head>
+ <title>Personal Info Table</title>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+          }
+          h2 {
+            color: #a02569;
+          }
+          #info {
+            margin-bottom: 10px;
+            font-size: 18px;
+          }
+          table {
+            width: 50%;
+            border-collapse: collapse;
+            margin-top: 10px;
+          }
+          th, td {
+            padding: 10px;
+            border: 1px solid #ad2828;
+            text-align: left;
+          }
+          th {
+            background-color: #827a8e;
+          }
+          tr:nth-child(even) {
+            background-color: #30cd1b;
+          }
+        </style>
+        </head>
+    <body>
+        <h2>Personal Information Table</h2>
+        <p id="info"></p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Sex</th>
+                </tr>
+            </thead>
+            <tbody id="data-body"></tbody>
+        </table>
+        <script>
+            const personalinfo = [
+                {name: 'Sonam', age: '28', sex: 'male'},
+                {name: 'Sangay', age: '27', sex: 'female'},
+                {name: 'Bumchu', age: '18', sex: 'male'},
+                {name: 'Pema', age: '25', sex: 'female'},
+                {name: 'Karma', age: '33', sex: 'male'},
+                {name: 'Yangzom', age: '14', sex: 'female'}
+            ];
+
+            document.getElementById('info').innerText = 'The length of the array is: ' + personalinfo.length;
+
+            const tbody = document.getElementById('data-body');
+            personalinfo.map((person) => {
+               const row = document.createElement('tr');
+               row.innerHTML = `
+               <td>${person.name.toUpperCase()}</td>
+               <td>${person.age}</td>
+               <td>${person.sex.toLowerCase()}</td>
+               `;
+               tbody.appendChild(row);
+            });
+        </script>
+    </body>
+</html>

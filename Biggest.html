@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<body>
+<script>
+var arr = [5, 7, 2, 8, 6, 1, 9, 4, 3];
+var big = arr[0];
+var small = arr[0];
+document.write("Array elements are : <br/>");
+for (var i=0 ; i<arr.length ; i++){
+document.write(arr[i] + "<br/>");
+if(arr[i] > big){
+big = arr[i];
+}
+if(arr[i] < small){
+small = arr[i];
+}
+}
+if(big == small){
+document.write("All elements are same : " + big + "<br/>");
+}
+else{
+
+
+document.write("Biggest element : " + big + "<br/>");
+document.write("Smallest element : " + small + "<br/>");
+}
+// Using Math.min and Math.max to find smallest and biggest elements
+// in the array
+// const arr = [5, 7, 2, 8, 6, 1, 9, 4, 3];
+const min = Math.min(...arr);
+const max = Math.max(...arr);
+document.write("Max element : " + max + "<br/>");   
+document.write("Min element : " + min + "<br/>");
+</script>
+</body>
+</html>
